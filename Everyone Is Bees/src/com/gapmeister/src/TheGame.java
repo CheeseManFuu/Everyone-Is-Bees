@@ -21,8 +21,8 @@ public class TheGame extends StateBasedGame {
 		super("Uncle Lucy's Battle Royale ver. 1.048596");
 	}
 	
-	public void initStatesList(GameContainer window) throws SlickException {
-		
+	public void initStatesList(GameContainer window) throws SlickException {//Add each state below. First state on the list is the default.
+		addState(new MenuState());
 	}
 	
 }

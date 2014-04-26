@@ -14,6 +14,7 @@ public class TheGame extends StateBasedGame {
 		game = new TheGame();
 		window = new AppGameContainer(game, 800, 600, false);
 		game.init(window);
+		window.setClearEachFrame(true);
 		window.start();
 	}
 	
@@ -23,6 +24,7 @@ public class TheGame extends StateBasedGame {
 	
 	public void initStatesList(GameContainer window) throws SlickException {//Add each state below. First state on the list is the default.
 		addState(new MenuState());
+		addState(new GameState());
 	}
 	
 }

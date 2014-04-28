@@ -16,6 +16,7 @@ public class TitleState extends BasicGameState {
 
 	public void enter(GameContainer window, StateBasedGame game) {//Called upon entering this state
 		window.setShowFPS(false);
+		window.setVSync(true);
 	}
 
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
@@ -30,13 +31,13 @@ public class TitleState extends BasicGameState {
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop
 		frameCount++;
-		if(frameCount >= 350) {
+		if(frameCount >= 500) {
 			game.enterState(1);
 		}
 	}
 
 	public void exit(GameContainer window, StateBasedGame game) {//Called before exiting this state
-
+		
 	}
 
 	public int getID() {//Unique to each state. Used in the StateBasedGame.enterState(int) method.

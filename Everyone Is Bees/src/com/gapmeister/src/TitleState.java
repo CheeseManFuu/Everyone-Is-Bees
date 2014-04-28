@@ -8,7 +8,7 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class TitleState extends BasicGameState {
 
-	private int frameCount = 0;
+	private int milliCount = 0;
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 
@@ -21,17 +21,17 @@ public class TitleState extends BasicGameState {
 
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
 		g.drawString("Everyone", 100, 100);
-		if(frameCount >= 60) {
+		if(milliCount >= 3000) {
 			g.drawString("Is", 200, 100);
 		}
-		if(frameCount >= 120) {
+		if(milliCount >= 6000) {
 			g.drawString("Bees", 240, 100);
 		}
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop
-		frameCount++;
-		if(frameCount >= 500) {
+		milliCount += delta;
+		if(milliCount >= 10000) {
 			game.enterState(1);
 		}
 	}

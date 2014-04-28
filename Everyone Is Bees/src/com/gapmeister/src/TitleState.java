@@ -10,6 +10,7 @@ public class TitleState extends BasicGameState {
 
 	private int milliCount = 0;
 	private int frameCount = 0;
+	private final int MAX_FRAMES_PER_SECOND = 60;
 	
 	private String fullTitle = "Everyone     Is     Bees";
 	private String displayedTitle = "";
@@ -36,7 +37,7 @@ public class TitleState extends BasicGameState {
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop
-		for(milliCount += delta; milliCount > 16; milliCount-= 16)
+		for(milliCount += delta; milliCount >= 1000/MAX_FRAMES_PER_SECOND; milliCount-= 1000/MAX_FRAMES_PER_SECOND)
 		{
 			frameCount ++;
 			displayedTitle = fullTitle.substring(0, Math.min(fullTitle.length(), frameCount/FRAMES_PER_LETTER));

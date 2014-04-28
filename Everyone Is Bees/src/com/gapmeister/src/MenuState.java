@@ -28,7 +28,7 @@ public class MenuState extends BasicGameState {
 	}
 	
 	public void mousePressed(int button, int x, int y) {
-		game.enterState(1);
+		game.enterState(2);
 	}
 	
 	public void exit(GameContainer window, StateBasedGame game) {//Called before exiting this state
@@ -36,7 +36,7 @@ public class MenuState extends BasicGameState {
 	}
 
 	public int getID() {//Unique to each state. Used in the StateBasedGame.enterState(int) method.
-		return 0;
+		return 1;
 	}
 
 }

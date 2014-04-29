@@ -13,9 +13,9 @@ public class TheGame extends StateBasedGame {
 	public static void main(String[] args) throws SlickException {
 		game = new TheGame();
 		window = new AppGameContainer(game, 800, 600, false);
+		window.start();
 		window.setClearEachFrame(true);
 		game.init(window);
-		window.start();
 		//If you can see this and the game still works, then I haven't done anything wrong yet. ~Mokey
 	}
 	

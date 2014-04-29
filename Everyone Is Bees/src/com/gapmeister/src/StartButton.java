@@ -1,21 +1,25 @@
 package com.gapmeister.src;
 
-import org.newdawn.slick.Image;
-import org.newdawn.slick.gui.GUIContext;
-import org.newdawn.slick.gui.MouseOverArea;
+import org.newdawn.slick.Color;
 import org.newdawn.slick.state.StateBasedGame;
 
-public class StartButton extends MouseOverArea {
-
-	private StateBasedGame game;
+public class StartButton extends MenuButton {
 	
-	public StartButton(GUIContext container, Image image, int x, int y, StateBasedGame game) { 
-		super(container, image, x, y);
-		this.game = game;
+	public StartButton(String s, Color c, float x, float y, float width, float height, StateBasedGame game) {
+		super(s, c, x, y, width, height, game);
+		
 	}
-	
-	public void mousePressed(int button, int x, int y) {
+
+	public void buttonPressed() {
 		game.enterState(2);
 	}
-	
+
+	public void buttonReleased() {
+		
+	}
+
+	public void buttonClicked() {
+		
+	}
+
 }

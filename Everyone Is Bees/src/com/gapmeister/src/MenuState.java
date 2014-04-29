@@ -14,8 +14,9 @@ public class MenuState extends BasicGameState {
 	private MenuButton[] buttons;
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
-		buttons = new MenuButton[1];
-		buttons[0] = new StartButton("Start", Color.gray, 300, 275, 200, 50, game);
+		buttons = new MenuButton[2];
+		buttons[0] = new StartButton("Start", Color.gray, 300, 274, 200, 50, game);
+		buttons[1] = new ExitButton("Exit", Color.gray, 300, 326, 200, 50, game);
 	}
 
 	public void enter(GameContainer window, StateBasedGame game) {//Called upon entering this state
@@ -24,6 +25,7 @@ public class MenuState extends BasicGameState {
 	}
 	
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
+		g.setColor(Color.white);
 		g.drawString("Everyone Is Bees\n\nMain Menu", 5f, 5f);
 		for(MenuButton button: buttons) {
 			if(button != null) {

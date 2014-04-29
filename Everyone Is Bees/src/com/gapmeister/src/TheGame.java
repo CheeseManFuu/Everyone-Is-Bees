@@ -27,6 +27,7 @@ public class TheGame extends StateBasedGame {
 		addState(new TitleState());
 		addState(new MenuState());
 		addState(new GameState());
+		addState(new ExitState());
 	}
 	
 }

@@ -20,7 +20,7 @@ public class MenuState extends BasicGameState {
 	}
 	
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
-		g.drawString("Main Menu", 5f, 5f);
+		g.drawString("Everyone Is Bees\n\nMain Menu", 5f, 5f);
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop

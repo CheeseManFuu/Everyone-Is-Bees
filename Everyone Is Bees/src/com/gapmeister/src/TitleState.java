@@ -19,8 +19,8 @@ public class TitleState extends BasicGameState {
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 		fullTitle = new ArrayList<String>();
-		fullTitle.add("Team 1AM_BRILLIANCE presents");
-		fullTitle.add("The best ARPG since Daikatana");
+		fullTitle.add("Team 1AM_BRILLIANCE Presents...");
+		fullTitle.add("The Best ARPG Since Daikatana...");
 		fullTitle.add("EVERYONE");
 		fullTitle.add("IS");
 		fullTitle.add("BEES");

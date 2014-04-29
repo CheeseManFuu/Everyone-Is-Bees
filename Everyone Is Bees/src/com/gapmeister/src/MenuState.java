@@ -10,6 +10,8 @@ public class MenuState extends BasicGameState {
 	
 	private StateBasedGame game;
 	
+	private StartButton start;
+	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 		
 	}

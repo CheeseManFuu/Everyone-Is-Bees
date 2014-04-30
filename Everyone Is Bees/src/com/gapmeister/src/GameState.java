@@ -9,6 +9,8 @@ import org.newdawn.slick.state.StateBasedGame;
 public class GameState extends BasicGameState {
 	
 	private MovementUnit ground;
+	private boolean up, down, left, right;
+	private MovementVector playerMovement;
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 		ground = new MovementUnit();
@@ -24,7 +26,38 @@ public class GameState extends BasicGameState {
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop
-		
+		if(!up && !down && !left && !right) {
+			playerMovement = new MovementVector();
+		} else {
+			playerMovement = new MovementVector((left?-1:0) + (right?1:0), (up?-1:0) + (down?1:0));
+		}
+		ground.update(playerMovement);
+	}
+	
+	public void keyPressed(int code, char key) {
+		switch(key) {
+		case 'a': left = true;
+			break;
+		case 's': down = true;
+			break;
+		case 'd': right = true;
+			break;
+		case 'w': up = true;
+			break;
+		}
+	}
+	
+	public void keyReleased(int code, char key) {
+		switch(key) {
+		case 'a': left = false;
+			break;
+		case 's': down = false;
+			break;
+		case 'd': right = false;
+			break;
+		case 'w': up = false;
+			break;
+		}
 	}
 	
 	public void exit(GameContainer window, StateBasedGame game) {//Called before exiting this state

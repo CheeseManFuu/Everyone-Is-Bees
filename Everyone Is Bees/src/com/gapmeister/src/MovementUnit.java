@@ -12,7 +12,12 @@ public class MovementUnit {
 	
 	public MovementUnit() {
 		getRect = new Rectangle(100, 100, 500, 200);
-		player1 = new Player();
+		player1 = new Player(getRect.getCenterX(), getRect.getCenterY());
+	}
+	
+	public void update(MovementVector v) {
+		player1.moveNext(v);
+		player1.update();
 	}
 	
 	public void draw(Graphics g) {

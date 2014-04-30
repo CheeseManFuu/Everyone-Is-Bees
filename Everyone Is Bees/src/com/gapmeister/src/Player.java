@@ -1,32 +1,33 @@
 package com.gapmeister.src;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Circle;
 
 public class Player {
 	
-	//Fields
-	private double theta; //Because fuck logical variable names, that's why.
+	private float x, y;
+	private float speed;
+	private MovementVector v = new MovementVector();
 	
-	//Constructor
-	public Player()
-	{
-		theta = 0;
+	public Player(float x, float y) {
+		this.x = x;
+		this.y = y;
+		speed = 1.2f;
 	}
 	
-	//Methods
-	public void update()
-	{
-		//TODO: EVERYTHING
-	}
-	public void draw(Graphics g)
-	{
-		//TODO: ALSO EVERYTHING
+	public void moveNext(MovementVector v) {
+		this.v = v;
 	}
 	
-	/*
-	 * REMEMBER: When adding a value to theta...
-	 * theta = (theta+value)%(2*Math.PI);
-	 * This keeps it within the unit circle and makes Mokey happy.
-	 */
+	public void update() {
+		x += v.x * speed;
+		y += v.y * speed;
+	}
+	public void draw(Graphics g) {
+		g.setColor(Color.white);
+		g.draw(new Circle(x, y, 10));
+		g.fill(new Circle(x, y, 10));
+	}
 
 }

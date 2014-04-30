@@ -24,7 +24,7 @@ public class TheGame extends StateBasedGame {
 	}
 	
 	public void initStatesList(GameContainer window) throws SlickException {//Add each state below. First state on the list is the default.
-		addState(new TitleState());
+		//addState(new TitleState());
 		addState(new MenuState());
 		addState(new GameState());
 		addState(new ExitState());

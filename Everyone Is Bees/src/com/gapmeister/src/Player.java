@@ -1,5 +1,7 @@
 package com.gapmeister.src;
 
+import org.newdawn.slick.Graphics;
+
 public class Player {
 	
 	//Fields
@@ -16,7 +18,7 @@ public class Player {
 	{
 		//TODO: EVERYTHING
 	}
-	public void draw()
+	public void draw(Graphics g)
 	{
 		//TODO: ALSO EVERYTHING
 	}

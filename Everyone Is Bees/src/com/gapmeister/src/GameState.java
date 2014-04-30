@@ -8,8 +8,10 @@ import org.newdawn.slick.state.StateBasedGame;
 
 public class GameState extends BasicGameState {
 	
+	private MovementUnit ground;
+	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
-		
+		ground = new MovementUnit();
 	}
 
 	public void enter(GameContainer window, StateBasedGame game) {//Called upon entering this state
@@ -18,7 +20,7 @@ public class GameState extends BasicGameState {
 	}
 
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
-		
+		ground.draw(g);
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop

@@ -11,11 +11,10 @@ public class StartButton extends MenuButton {
 	}
 
 	public void buttonPressed() {
-		game.enterState(2);
 	}
 
 	public void buttonReleased() {
-		
+		game.enterState(2);
 	}
 
 	public void buttonClicked() {

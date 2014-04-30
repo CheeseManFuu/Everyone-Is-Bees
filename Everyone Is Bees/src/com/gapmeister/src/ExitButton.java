@@ -18,11 +18,10 @@ public class ExitButton extends MenuButton {
 	}
 
 	public void buttonPressed() {
-		game.enterState(-1);
 	}
 
 	public void buttonReleased() {
-		
+		game.enterState(-1);
 	}
 
 	public void buttonClicked() {

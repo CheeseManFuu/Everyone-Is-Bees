@@ -38,10 +38,10 @@ public class MenuState extends BasicGameState {
 		
 	}
 	
-	public void mousePressed(int b, int x, int y) {
+	public void mouseReleased(int b, int x, int y) {
 		for(MenuButton button: buttons) {
 			if(button.containsPoint(x, y)) {
-				button.buttonPressed();
+				button.buttonReleased();
 			}
 		}
 	}

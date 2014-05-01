@@ -9,11 +9,13 @@ public class Player {
 	private float x, y;
 	private float speed;
 	private MovementVector v = new MovementVector();
+	private int hp;
 	
 	public Player(float x, float y) {
 		this.x = x;
 		this.y = y;
 		speed = 1.2f;
+		hp = 10;
 	}
 	
 	public MovementVector getPos()
@@ -23,6 +25,10 @@ public class Player {
 	
 	public void moveNext(MovementVector v) {
 		this.v = v;
+	}
+	
+	public int getHealth() {
+		return hp;
 	}
 	
 	public void update() {

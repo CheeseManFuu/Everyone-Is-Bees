@@ -11,9 +11,11 @@ public class GameState extends BasicGameState {
 	private MovementUnit ground;
 	private boolean up, down, left, right;
 	private MovementVector playerMovement;
+	private Player p1;
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 		ground = new MovementUnit();
+		p1 = new Player(ground.getCenter()[0], ground.getCenter()[1]);
 	}
 
 	public void enter(GameContainer window, StateBasedGame game) {//Called upon entering this state
@@ -23,15 +25,14 @@ public class GameState extends BasicGameState {
 
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
 		ground.draw(g);
+		p1.draw(g);
 	}
 
 	public void update(GameContainer window, StateBasedGame game, int delta) throws SlickException {//Game logic loop
-		if(!up && !down && !left && !right) {
-			playerMovement = new MovementVector();
-		} else {
-			playerMovement = new MovementVector((left?-1:0) + (right?1:0), (up?-1:0) + (down?1:0));
-		}
-		ground.update(playerMovement);
+		playerMovement = new MovementVector((left?-1:0) + (right?1:0), (up?-1:0) + (down?1:0));
+		ground.update();
+		p1.moveNext(playerMovement);
+		p1.update();
 	}
 	
 	public void keyPressed(int code, char key) {

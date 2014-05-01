@@ -16,6 +16,11 @@ public class Player {
 		speed = 1.2f;
 	}
 	
+	public MovementVector getPos()
+	{
+		return new MovementVector(x, y);
+	}
+	
 	public void moveNext(MovementVector v) {
 		this.v = v;
 	}

@@ -56,6 +56,13 @@ public class TitleState extends BasicGameState {
 			}
 		}
 	}
+	
+	public void keyPressed(int code, char key) {
+		while(!fullTitle.isEmpty())
+		{
+			fullTitle.remove(0);
+		}
+	}
 
 	public void exit(GameContainer window, StateBasedGame game) {//Called before exiting this state
 		

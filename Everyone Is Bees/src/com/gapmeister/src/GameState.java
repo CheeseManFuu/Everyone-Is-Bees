@@ -1,5 +1,7 @@
 package com.gapmeister.src;
 
+import java.util.ArrayList;
+
 import org.newdawn.slick.Color;
 import org.newdawn.slick.GameContainer;
 import org.newdawn.slick.Graphics;
@@ -18,6 +20,7 @@ public class GameState extends BasicGameState {
 	private Weapon gun; //This should probably be moved later in development.
 	private HUD hud;
 	private GameContainer container;
+	private ArrayList<Entity> entities;
 	
 	public void init(GameContainer window, StateBasedGame game) throws SlickException {//Called before the game runs
 		ground = new MovementUnit();
@@ -26,6 +29,7 @@ public class GameState extends BasicGameState {
 		gun = new Weapon();
 		hud = new HUD(p1);
 		container = window;
+		entities = new ArrayList<Entity>(50);
 	}
 
 	public void enter(GameContainer window, StateBasedGame game) {//Called upon entering this state
@@ -93,6 +97,10 @@ public class GameState extends BasicGameState {
 		} else {
 			container.setMouseGrabbed(true);
 		}
+	}
+	
+	public boolean removeEntity(Entity e) {
+		return entities.remove(e);
 	}
 	
 	public void exit(GameContainer window, StateBasedGame game) {//Called before exiting this state

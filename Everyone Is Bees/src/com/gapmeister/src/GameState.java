@@ -52,7 +52,7 @@ public class GameState extends BasicGameState {
 			g.fill(new Rectangle(window.getWidth()/2-35, window.getHeight()/2-10, 70, 20));
 			
 			g.setColor(Color.white);
-			g.drawString("PAUSED", window.getWidth()/2-9*3, window.getHeight()-8);
+			g.drawString("PAUSED", window.getWidth()/2 - g.getFont().getWidth("PAUSED")/2, window.getHeight()/2 - g.getFont().getHeight("PAUSED")/2);
 		}
 	}
 

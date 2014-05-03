@@ -1,6 +1,8 @@
 package com.gapmeister.src;
 
+import org.newdawn.slick.Color;
 import org.newdawn.slick.Graphics;
+import org.newdawn.slick.geom.Rectangle;
 
 public class Boolet extends Entity {
 
@@ -18,7 +20,7 @@ public class Boolet extends Entity {
 	public void update() {
 		x += momentum.x * speed;
 		y += momentum.y * speed;
-		if(range <= 0) {
+		if(range >= 0) {
 			range -= momentum.getDist();
 		} else {
 			kill(this);
@@ -26,7 +28,9 @@ public class Boolet extends Entity {
 	}
 
 	public void draw(Graphics g) {
-		
+		g.setColor(Color.yellow);
+		//g.draw(new Rectangle(booletX, booletY, 3, 3));
+		g.fill(new Rectangle(x, y, 3, 3));
 	}
 	
 	public Entity getParent() {

@@ -26,7 +26,7 @@ public class GameState extends BasicGameState {
 		ground = new MovementUnit();
 		mousePointer = new MovementVector();
 		p1 = new Player(ground.getCenter()[0], ground.getCenter()[1]);
-		gun = new Weapon();
+		gun = new Weapon(this);
 		hud = new HUD(p1);
 		container = window;
 		entities = new ArrayList<Entity>(50);
@@ -40,7 +40,8 @@ public class GameState extends BasicGameState {
 
 	public void render(GameContainer window, StateBasedGame game, Graphics g) throws SlickException {//Render loop
 		ground.draw(g);
-		gun.draw(g);
+		for(Entity e : entities)
+			e.draw(g); //I know these things were added correctly. WHY DO THEY NOT DRAW
 		p1.draw(g);
 		g.setColor(Color.red);
 		g.draw(new Circle(mousePointer.x, mousePointer.y, 5));
@@ -62,10 +63,11 @@ public class GameState extends BasicGameState {
 			mousePointer = new MovementVector(window.getInput().getMouseX(), window.getInput().getMouseY());
 			playerMovement = new MovementVector((left?-1:0) + (right?1:0), (up?-1:0) + (down?1:0));
 			ground.update();
-			gun.update();
 			p1.moveNext(playerMovement);
 			p1.update();
 			hud.update();
+			for(int i = 0; i < entities.size(); i++)
+				entities.get(i).update();
 		}
 	}
 	
@@ -102,6 +104,11 @@ public class GameState extends BasicGameState {
 	public void mouseReleased(int b, int x, int y)
 	{
 		gun.fire(p1.getPos(), mousePointer);
+	}
+	
+	public boolean addEntity(Entity e)
+	{
+		return entities.add(e);
 	}
 	
 	public boolean removeEntity(Entity e) {

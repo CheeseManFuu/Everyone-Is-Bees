@@ -15,7 +15,7 @@ public class Player {
 		this.x = x;
 		this.y = y;
 		speed = 1.2f;
-		hp = 10;
+		hp = 100; //Having a mana value five times greater than our hp is just pathetic. Value inflation must be matched with value inflation.
 		mana = 50;
 	}
 	
